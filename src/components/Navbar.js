@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import {LinkContainer} from 'react-router-bootstrap';
+
 function NavbarFixed() {
 
     return (
@@ -9,7 +11,7 @@ function NavbarFixed() {
         {[ 'md' ].map((expand) => (
           <Navbar fixed="top" key={expand} expand={expand} bg="dark" data-bs-theme="dark">
             <Container fluid>
-              <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+              <Navbar.Brand href="#">Sales Report</Navbar.Brand>
               <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
               <Navbar.Offcanvas
                 id={`offcanvasNavbar-expand-${expand}`}
@@ -25,8 +27,12 @@ function NavbarFixed() {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-middle flex-grow-1 pe-3">
-                    <Nav.Link href="#action1">Home</Nav.Link>
-                    <Nav.Link href="#action2">Link</Nav.Link>
+                    <LinkContainer to="/">
+                        <Nav.Link>Home</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/about">
+                        <Nav.Link>About</Nav.Link>
+                    </LinkContainer>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
