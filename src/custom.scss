@@ -1,4 +1,6 @@
-
+html body {
+    background-color: rgb(255, 255, 255);
+}
 .nav-tabs .nav-link {
     color: black !important;
 }
@@ -6,8 +8,50 @@
     padding: 90px;
 }
 
+.smallPushDown {
+    padding-top: 45px;
+}
+
 .lineChart {
     padding-top: 20px;
 }
 
+.transactionMain {
+    background-color: rgb(255, 255, 255);
+    min-width: 300px;
+    max-width: 800px;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+}
+
+.transactionMain:hover {
+    cursor: pointer;
+    width: 120%;
+    height: 120%;
+    background-color: rgb(226, 226, 226);
+}
+
+.transactionContainer {
+    padding: 0;
+}
+.transactionDropDown {
+    min-width: 300px;
+    max-width: 800px;
+    padding-top: 2px;
+    padding-bottom: 15px;
+}
+.arrowDown {
+    text-align: center;
+}
+.tDropDown {
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
 @import '~bootstrap/dist/css/bootstrap.css';
