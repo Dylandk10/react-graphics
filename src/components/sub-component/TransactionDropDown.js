@@ -5,7 +5,7 @@ const TransactionDropDown = (props) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div class="transactionContainer">
+        <div className="transactionContainer">
             <div className="transactionMain"
                 onClick={() => setOpen(!open)}
                 aria-controls="example-collapse-text"

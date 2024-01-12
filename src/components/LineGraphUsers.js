@@ -11,7 +11,7 @@ const LineGraphUsers = (props) => {
 
     return (
 
-        <Container>
+        <Container className="salesContainer">
         <Row>
         <Col sm>
 
@@ -26,10 +26,10 @@ const LineGraphUsers = (props) => {
            </Col>
 
           <Col >
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height={300}>
         <BarChart
-          width={600}
-          height={500}
+          width={400}
+          height={300}
           data={props.data}
           margin={{
             top: 5,
@@ -46,7 +46,7 @@ const LineGraphUsers = (props) => {
           <Bar dataKey="revenue" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
           <Bar dataKey="numberOfOrders" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
         </BarChart>
-      </ResponsiveContainer>
+          </ResponsiveContainer>
            </Col>
 
 

@@ -11,6 +11,7 @@ const TabBar = () => {
     return (
         <Tabs
         id="tabbar"
+        className="smallPushDown"
         unmountOnExit={true}
         mountOnEnter={true}
         activeKey={key}

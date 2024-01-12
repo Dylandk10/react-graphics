@@ -1,4 +1,4 @@
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -15,9 +15,9 @@ const LineGraphs = (props) => {
 
     return (
 
-        <Container>
+        <Container fluid="md salesContainer">
         <Row>
-        <Col md>
+        <Col lg>
            <h3>Filter</h3>
            <select onChange={(e) => updateFilter(e.target.value)}>
                 <option value="revenue">Revenue</option>
@@ -30,7 +30,8 @@ const LineGraphs = (props) => {
             </p>
            </Col>
 
-          <Col xs>
+          <Col>
+            <ResponsiveContainer width="100%" height={300}>
             <LineChart width={600} height={300} data={props.data} className="lineChart">
                 <Line type="monotone" dataKey={filter} stroke="#8884d8" />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
@@ -38,6 +39,7 @@ const LineGraphs = (props) => {
                 <YAxis />
                 <Tooltip />
             </LineChart>
+            </ResponsiveContainer>
            </Col>
 
 
