@@ -3,11 +3,11 @@ import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import useWindowDimensions from '../utilities/windowsise';
 
 const LineGraphUsers = (props) => {
 
-
-
+  const { height, width } = useWindowDimensions();
 
     return (
 
@@ -25,29 +25,57 @@ const LineGraphUsers = (props) => {
             </p>
            </Col>
 
-          <Col md>
+          {width >= 700 ?
+          <Col lg>
           <ResponsiveContainer width="100%" height={300}>
-        <BarChart
-          width={400}
-          height={300}
-          data={props.data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
+            <BarChart
+              width={400}
+              height={300}
+              data={props.data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+          >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="order_number" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="revenue" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-          <Bar dataKey="numberOfOrders" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
-        </BarChart>
+            <XAxis dataKey="order_number" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="revenue" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+            <Bar dataKey="numberOfOrders" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+          </BarChart>
           </ResponsiveContainer>
-           </Col>
+          </Col>
+
+          //if the width is less than 700 render this
+          :
+          <Col lg>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart
+              width={400}
+              height={300}
+              data={props.data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+          >
+          <CartesianGrid strokeDasharray="3 3" />
+            <XAxis />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="revenue" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+            <Bar dataKey="numberOfOrders" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+          </BarChart>
+          </ResponsiveContainer>
+          </Col>
+          }
 
 
         </Row>

@@ -5,7 +5,7 @@ const TransactionPage = (props) => {
 
 
     return (
-        <div className="pushDown paddingSides">
+        <div className="pushDown">
             <h3> Transactions</h3> <hr />
 
             {Test_Data.map((data) => {

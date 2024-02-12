@@ -3,15 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
+import useWindowDimensions from '../utilities/windowsise';
 
 const LineGraphs = (props) => {
-        const [filter, setFilter] = useState("revenue");
+    const { height, width } = useWindowDimensions();
+    const [filter, setFilter] = useState("revenue");
 
-
-        const updateFilter = (value) => {
-            setFilter(value);
-            console.log(filter);
-        };
+    const updateFilter = (value) => {
+        setFilter(value);
+    };
 
     return (
 
@@ -29,6 +29,7 @@ const LineGraphs = (props) => {
                 by number of orders or by revenue.
             </p>
            </Col>
+           {width >= 700 ?
 
           <Col>
             <ResponsiveContainer width="100%" height={300}>
@@ -41,6 +42,23 @@ const LineGraphs = (props) => {
             </LineChart>
             </ResponsiveContainer>
            </Col>
+            //if the width is smaller than 700 render this
+           :
+
+           <Col>
+          
+          
+           <ResponsiveContainer width="100%" height={300}>
+           <LineChart width={600} height={300} data={props.data} className="lineChart">
+               <Line type="monotone" dataKey={filter} stroke="#8884d8" />
+               <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+               <XAxis />
+               <YAxis />
+               <Tooltip />
+           </LineChart>
+           </ResponsiveContainer>
+          </Col>
+          }
 
 
         </Row>
