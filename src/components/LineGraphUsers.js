@@ -25,7 +25,7 @@ const LineGraphUsers = (props) => {
             </p>
            </Col>
 
-          <Col >
+          <Col md>
           <ResponsiveContainer width="100%" height={300}>
         <BarChart
           width={400}
