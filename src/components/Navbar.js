@@ -22,7 +22,7 @@ function NavbarFixed() {
               >
                 <Offcanvas.Header closeButton >
                   <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    Offcanvas
+                    Sales Dashboard
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
@@ -31,7 +31,7 @@ function NavbarFixed() {
                         <Nav.Link>Home</Nav.Link>
                     </LinkContainer>
                     <LinkContainer to="/about">
-                        <Nav.Link>About</Nav.Link>
+                        <Nav.Link>Live Sales</Nav.Link>
                     </LinkContainer>
                   </Nav>
                 </Offcanvas.Body>
